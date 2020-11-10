@@ -1,0 +1,14 @@
+Po vzoru třídy Point vytvořte svou vlastní třídu, která bude obsahovat:
+-   aspoň dva atributy na úrovni třídy
+-   aspoň tři atributy na úrovni objektu
+-   magickou metodu __str__
+-   aspoň další dvě porovnávací magické metody (např. ==, <)
+-   aspoň další dvě matematické magické metody (např. +, *)
+- aspoň jednu statickou metodu
+- aspoň jednu metodu třídy
+-   aspoň dvě metody objektu
+
+Pro vytvoření své třídy můžete použít libovolný objekt z reality, například jednoduché geometrické útvary,
+objekt pro časový (hh:mm:ss) nebo datový (yyyy-mm-dd) údaj, běžnou věc s určitými číselnými údaji (rozměry) atd.
+
+Fungování všech prvků třídy demonstrujte na příkladech vytvořených objektů opět podle vzorové úlohy třídy Point.
