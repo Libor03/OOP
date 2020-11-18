@@ -61,13 +61,20 @@ class Rectangle:
         self.name = name
 
 
-
-
+class infoRectangle(Rectangle):
+    def __init__(self, x, y, a, b, name, url):
+        super().__init__(x, y, a, b, name)
+        self.name = name
+        self.url = url
+    def draw(self):
+        super().draw()
+        print (f'URL: {self.url}')
 #? Ověř fungování všech magických metod na příkladech objektů bod1 a bod2
 print(f'{"*".ljust(80,"*")}\nOvěř fungování všech magických metod na příkladech objektů bod1 a bod2')
 obdelnik1 = Rectangle(0, 0, 2, 3, "")
 obdelnik2 = Rectangle(0, 5, 2, 1, "")
-
+obdelnik8 = infoRectangle(1,2,3,4, "a", "asdasd.asd.vz")
+obdelnik8.draw()
 print(Rectangle.__str__(obdelnik1))
 print(Rectangle.__eq__(obdelnik1, obdelnik2))
 print(Rectangle.__gt__(obdelnik1))

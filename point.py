@@ -66,6 +66,8 @@ class Point:
         self.color = color
 
 
+
+
 #? Vytvoř objekt bod1 na pozici x: 8, y: 5
 bod1 = Point(8, 5)
 print(bod1)
