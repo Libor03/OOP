@@ -14,7 +14,7 @@ class Rectangle:
         self.y = y
         self.a = a
         self.b = b
-        self.name = Rectangle.default_name
+        self.name = name
         self.color = Rectangle.default_color
 
     # Magická metoda pro výpis textové informace o objektu
@@ -27,23 +27,26 @@ class Rectangle:
         return self.x == other.x and self.y == other.y and self.a == other.a and self.b == other.b
 
     # metoda pro zjištění obsahu
-    def __gt__(self):
-        return  self.a * self.b
+    def __gt__(self, other):
+        return  self.a * self.b > other.a * other.b
+
 
     # Magická metoda pro součet obsahů dvou objektů
     def __add__(self, other):
-        return self.__gt__() + other.__gt__()
+        return self.square() + other.square()
 
     #zjistí, jestli má 1. objekt větší obsah
     def __sub__(self, other):
-        # Provede zjištění vzdálenosti dvou objektů
-        return self.__gt__() > other.__gt__()
+        # dodat abs. hodnotu
+        return abs(self.square() - other.square())
+
 
     #? Tady bude statická (třídní) metoda random_color(), která vygeneruje náhodou barvu rgb zapsanou hexadecimálně
     @staticmethod
     def random_codename():
         return ''.join([str(random.randint(0, 255))[2:] for i in range(5)])
-
+    def square(self):
+        return self.a * self.b
     #? Tady bude metoda třídy random_pos(), která bude na základě zadaných argumentů určujících platný rozsah hodnot
     #? vytvářet náhodně umístěné body
 
@@ -71,13 +74,13 @@ class infoRectangle(Rectangle):
         print (f'URL: {self.url}')
 #? Ověř fungování všech magických metod na příkladech objektů bod1 a bod2
 print(f'{"*".ljust(80,"*")}\nOvěř fungování všech magických metod na příkladech objektů bod1 a bod2')
-obdelnik1 = Rectangle(0, 0, 2, 3, "")
-obdelnik2 = Rectangle(0, 5, 2, 1, "")
+obdelnik1 = Rectangle(0, 0, 2, 3, "sgsdfgsdgsdg")
+obdelnik2 = Rectangle(0, 5, 2, 1, "asd")
 obdelnik8 = infoRectangle(1,2,3,4, "a", "asdasd.asd.vz")
 obdelnik8.draw()
 print(Rectangle.__str__(obdelnik1))
 print(Rectangle.__eq__(obdelnik1, obdelnik2))
-print(Rectangle.__gt__(obdelnik1))
+print(Rectangle.__gt__(obdelnik1, obdelnik2))
 print(Rectangle.__add__(obdelnik1, obdelnik2))
 print(Rectangle.__sub__(obdelnik2, obdelnik1))
 obdelnik1.draw()
